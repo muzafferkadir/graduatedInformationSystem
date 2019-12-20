@@ -9,7 +9,7 @@ class UserTable(AbstractUser):
     student_no = models.IntegerField(default = 0,validators=[MinValueValidator(10000), MaxValueValidator(999999)])
     tc_no = models.IntegerField(default = 0,validators=[MinValueValidator(10000000000), MaxValueValidator(99999999999)])
     department = models.CharField(max_length = 100)
-    #image =models.ImageField(upload_to='images/')
+    image =models.ImageField(upload_to='images/', null=True, blank=True)
     telephone = models.CharField(max_length = 20, blank = True, null = True)
 
     def __str__(self):

@@ -6,7 +6,7 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = UserTable
-        fields = ['username', 'email','birthday','student_no','tc_no','department','telephone']
+        fields = ['username', 'email','birthday','student_no','tc_no','department','telephone','image']
 
 class CustomUserChangeForm(UserChangeForm):
 
