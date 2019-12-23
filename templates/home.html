@@ -9,6 +9,7 @@
   {% if user.image %}
     <img src = "{{user.image.url}}" height=100  width=100/>
   {% endif%}
+  <p><a href="{% url 'add-advert' %}">ADD ADVERT</a></p>
   <p><a href="{% url 'logout' %}">logout</a></p>
 {% else %}
   <p>You are not logged in</p>
