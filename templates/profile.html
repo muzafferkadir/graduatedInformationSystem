@@ -1,15 +1,25 @@
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Profile{% endblock %}
 
 {% block content %}
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
+  {{ user.username }}!
   {{user.tc_no}}
   {% if user.image %}
     <img src = "{{user.image.url}}" height=100  width=100/>
   {% endif%}
-  <p><a href="{% url 'profile' %}">Profile</a></p>
+  <h1>Advertisements</h1>
+    <ul>
+    {% for advert in object_list %}
+        <li>title:{{ advert.title }} 
+        </br> description:{{ advert.description |truncatechars:100}}
+        </br><a href="{{ advert.get_absolute_url }}">go to see all</a>
+        </li>
+    {% empty %}
+        <li>No advertisements yet.</li>
+    {% endfor %}
+    </ul>
   <p><a href="{% url 'add-advert' %}">ADD ADVERT</a></p>
   <p><a href="{% url 'logout' %}">logout</a></p>
 {% else %}
