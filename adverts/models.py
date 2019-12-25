@@ -9,5 +9,8 @@ class Advertisement(models.Model):
     def get_absolute_url(self):
         from django.urls import reverse
         return reverse('detail-advert', args=[str(self.id)])
+    def __str__(self):
+        return self.title
+    
     #company
     #position

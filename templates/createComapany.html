@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Company{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save">
+    </form>
+  <p><a href="{% url 'home' %}">Go home</a></p>
+{% else %}
+  <p>You are not logged in please sign in</p>
+  <a href="{% url 'login' %}">login</a> |
+  <a href="{% url 'signup' %}">signup</a>
+{% endif %}
+{% endblock %}

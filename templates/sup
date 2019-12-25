@@ -1,0 +1,100 @@
+
+{% load static %}
+<html>
+<meta charset="utf-8">
+    
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+   
+    <title>Au Register Forms by Colorlib</title>
+
+    
+    <link href={% static "vendor/mdi-font/css/material-design-iconic-font.min.css" %} rel="stylesheet" media="all">
+    <link href={% static "vendor/font-awesome-4.7/css/font-awesome.min.css" %} rel="stylesheet" media="all">
+    <link href={% static "https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" %} rel="stylesheet">
+    <link href={% static "vendor/select2/select2.min.css"%} rel="stylesheet" media="all" >
+    <link href={% static "vendor/datepicker/daterangepicker.css"%} rel="stylesheet" media="all" >
+
+    
+    <link href={% static "css/main.css"%} rel="stylesheet" media="all" >
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Registration Info</h2>
+                    <form method="POST">
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Name" name="name" value="first_name">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Surname" name="surname" value="last_name">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Username" name="username" value="username">
+                        </div>
+                         <div class="input-group">
+                            <input class="input--style-3" type="password" placeholder="Password" name="password" required="" value="email">
+                        </div>
+                         <div class="input-group">
+                            <input class="input--style-3" type="password" placeholder="Confirm Password" name="password" required="" value="birthday">
+                        </div>
+                         <div class="input-group">
+                            <input class="input--style-3" type="email" placeholder="Email" name="email" value="student_no">
+                        </div>
+                         <div class="input-group">
+                            <input class="input--style-3 js-datepicker" type="text" placeholder="Birthdate" name="birthday" value="tc_no">
+                            <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Student No" name="studentno" value="department">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="TC No" name="tcno" value="first_name">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Department" name="department" value="first_name">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Graduate Date" name="grddate" value="first_name">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Foreing Languages" name="flang"value="first_name">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Certificates" name="certificate"value="first_name">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Phone" name="phone"value="first_name">
+                        </div>
+                        <form action="/action_page.php">
+                        Resim için <input type="file" name="pic" accept="image/*" value="first_name">
+                        </form>
+                        <div class="p-t-10">
+                            <button class="btn btn--pill btn--green" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src={% static "vendor/jquery/jquery.min.js"%}></script>
+    <script src={% static "vendor/select2/select2.min.js"%}></script>
+    <script src={% static "vendor/datepicker/moment.min.js"%}></script>
+    <script src={% static "vendor/datepicker/daterangepicker.js"%}></script>
+    <script src={% static "js/global.js"%}></script>
+
+</body>
+
+</html>
