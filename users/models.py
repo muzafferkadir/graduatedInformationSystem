@@ -7,7 +7,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class UserTable(AbstractUser):
     birthday = models.DateField(("Date"), default=date.today)
     student_no = models.IntegerField(validators=[MinValueValidator(100000), MaxValueValidator(999999)],unique=True)
-    tc_no = models.IntegerField(validators=[MinValueValidator(10000000000), MaxValueValidator(99999999999)],unique=True)
+    tc_no = models.IntegerField(default=10000000000,validators=[MinValueValidator(10000000000), MaxValueValidator(99999999999)])
     department = models.CharField(max_length = 100)
     image =models.ImageField(upload_to='images/', null=True, blank=True)
     telephone = models.CharField(max_length = 20, blank = True, null = True)

@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-30 14:06+0000\n"
+"PO-Revision-Date: 2019-07-30 17:00+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: communication/forms.py:6 communication/models.py:30
+msgid "Message"
+msgstr "Mesaj"
+
+#: communication/forms.py:7 communication/models.py:33
+msgid "File"
+msgstr "Dosya"
+
+#: communication/models.py:8
+msgid "User"
+msgstr "Kullanıcı"
+
+#: communication/models.py:10
+msgid "Owner"
+msgstr "Sahip"
+
+#: communication/models.py:12
+msgid "Parent"
+msgstr "Ebeveyn"
+
+#: communication/models.py:13
+msgid "Comment"
+msgstr "Yorum"
+
+#: communication/models.py:14 communication/models.py:31
+msgid "Created"
+msgstr "Oluşturulma"
+
+#: communication/models.py:15
+msgid "Updated"
+msgstr "Güncellenme"
+
+#: communication/models.py:16
+msgid "Image"
+msgstr "Resim"
+
+#: communication/models.py:27
+msgid "Sender"
+msgstr "Gönderici"
+
+#: communication/models.py:29
+msgid "Receiver"
+msgstr "Alıcı"
+
+#: communication/models.py:32
+msgid "Seen"
+msgstr "Görüldü"
+
+#: communication/templates/communication/messages_detail.html:4
+#: communication/templates/communication/messages_list.html:4
+msgid "Messages"
+msgstr "Mesajlar"
+
+#: communication/templates/communication/messages_detail.html:19
+#: communication/templates/communication/messages_detail.html:33
+msgid "Attachment"
+msgstr "Eklenti"
+
+#: communication/templates/communication/messages_detail.html:45
+msgid "Send"
+msgstr "Gönder"
+
+#: communication/templates/communication/messages_list.html:20
+msgid "Me"
+msgstr "Ben"
