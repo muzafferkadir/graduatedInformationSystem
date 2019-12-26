@@ -40,7 +40,7 @@ class AdvertDelete(DeleteView):
 
 class AdvertList(ListView):
     model = Advertisement
-    paginate_by = 3  # if pagination is desired
+    paginate_by = 30  # if pagination is desired
     template_name = "profile.html"
 
     def get_queryset(self):

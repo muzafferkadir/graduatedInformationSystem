@@ -1,30 +1,73 @@
-{% extends 'base.html' %}
-
-{% block title %}Profile{% endblock %}
-
-{% block content %}
+{% load static %}
 {% if user.is_authenticated %}
-  {{ user.username }}!
-  {{user.tc_no}}
-  {% if user.image %}
-    <img src = "{{user.image.url}}" height=100  width=100/>
-  {% endif%}
-  <h1>Advertisements</h1>
-    <ul>
-    {% for advert in object_list %}
-        <li>title:{{ advert.title }} 
-        </br> description:{{ advert.description |truncatechars:100}}
-        </br><a href="{{ advert.get_absolute_url }}">go to see all</a>
+<html><head><meta charset="utf-8">
+<link href={% static "vendor/bootstrap/css/bootstrap.min.css"%} rel="stylesheet" id="bootstrap-css">
+<link href={% static "vendor/bootstrap/js/bootstrap.min.js"%}>
+<link href={% static "vendor/jquery/jquery-1.11.1.min.js"%}>
+<link href={% static "css/timeline.css"%} rel="stylesheet" media="all">
+</head>
+<body style="    background: linear-gradient(to top, #fbc2eb 0%, #a18cd1 100%);">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Ktü Mezun Takip Sistemi</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'add-advert' %}">İş İlanı Ver <span class="sr-only">(current)</span></a>
+        </li>        
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home' %}">Anasayfa<span class="sr-only">(current)</span></a>
         </li>
-    {% empty %}
-        <li>No advertisements yet.</li>
-    {% endfor %}
-    </ul>
-  <p><a href="{% url 'add-advert' %}">ADD ADVERT</a></p>
-  <p><a href="{% url 'logout' %}">logout</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a> |
-  <a href="{% url 'signup' %}">signup</a>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Çıkış Yap</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+  <div class="card mx-auto position-absolute" style="width: 15rem;">
+  <img src = "{{user.image.url}}"class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">PROFİL</h5>
+      <h5 class="card-title">{{user.first_name}} {{user.last_name}}</h5>
+      <p class="card-text">{{user.student_no}}</p>
+      <p class="card-text">{{user.birthday}}</p>
+      <p class="card-text">{{user.department}}</p>
+      <p class="card-text">{{user.telephone}}</p>
+    </div>
+  </div>
+        <div class="container">
+          <div class="page-header">
+              <h1 id="timeline">İlanlarım</h1>
+          </div>
+          <ul class="timeline">
+              {% for advert in object_list %}
+                  <li class="" style="    background: aliceblue;">
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4 class="timeline-title">{{ advert.title }}</h4>
+                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{ advert.employer }}</small>
+                        <small class="text-muted"><i class="glyphicon glyphicon-time"></i>26/12/2019</small></p>
+                      </div>
+                      <div class="timeline-body">
+                        <p>{{ advert.description |truncatechars:350}}</p>
+                      </div>
+                      <hr>
+                      
+                      <a href="{{ advert.get_absolute_url }}"><button type="button" class="btn btn-success">Tüm İlanı Gör</button></a>
+                      <a href="{% url 'update-advert' advert.id  %}"><button type="button" class="btn btn-info">İlanı Düzenle</button></a>
+                      <a href="{% url 'delete-advert' advert.id  %}"><button type="button" class="btn btn-danger">İlanı Sil</button></a>
+                    </div>
+                  </li>
+              {% empty %}
+                  <li>No advertisements yet.</li>
+              {% endfor %}
+          </ul>
+      </div>
+
+
+
+</body></html>
 {% endif %}
-{% endblock %}

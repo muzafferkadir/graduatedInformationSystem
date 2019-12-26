@@ -19,9 +19,10 @@ from django.views.generic.base import TemplateView
 from django.conf import settings
 from django.conf.urls import url
 from django.conf.urls.static import static,serve
+from users.views import MainList
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('', MainList.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('', include('users.urls')),
     path('', include('adverts.urls')),
